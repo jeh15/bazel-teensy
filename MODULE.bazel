@@ -1,0 +1,15 @@
+"""
+    Testing pigweed for Teensy 3.2
+"""
+
+module(
+    name = "bazel-teensy",
+)
+
+bazel_dep(name = "pigweed")
+git_override(
+    module_name = "pigweed",
+    strip_prefix = "",
+    remote = 'https://github.com/google/pigweed.git',
+    commit = 'ddcc251bcac0c2c20dfea39bed09683851587f99',
+)
